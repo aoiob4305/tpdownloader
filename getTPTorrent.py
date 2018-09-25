@@ -26,7 +26,8 @@ def getTPTorrentLinks(html, matching_day):
 	# tr의 class=alt를 모두 얻는다.
 	raw = soup.find(id='searchResult')
 	# 첫번째 tr은 header부분이라 제외
-	links = raw.find_all('tr')[1:]
+	# 마지막 tr은 페이지 링크 부분이라 제외
+	links = raw.find_all('tr')[1:-2]
 	
 	# 리스트 중 matching_day에 해당하는링크부분만 추출
 	# Today 또는 Y-day (날짜는 뽑아내기 애매해서 무시함)
