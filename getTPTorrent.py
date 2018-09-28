@@ -34,12 +34,12 @@ def getTPTorrentLinks(html, matching_day):
 	torrent_links = []
 	for link in links:
 		tds = link.find_all('td')
-		print (link)
+#		print (link)
 		#print(tds[1])
 		# 두번째 td 에서 정해진 날짜 문자열이 포함되어 있는지 확인
 		if tds[1].find(string=re.compile(matching_day)) != None:
 		# 마그넷 링크는 두번째에 a href에 들어있음
-			print(tds[1])
+#			print(tds[1])
 			torrent_links.append(tds[1].find_all('a')[1]['href'])
 
 	return torrent_links
